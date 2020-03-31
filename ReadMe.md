@@ -5,8 +5,7 @@ prerequisites: node and npm
 
 a. open two separate terminals: one in /internal, one in /external
 b. run npm install in each terminal
-c. run node server.js in the /internal terminal
-d. run npm start in the /external terminal
+c. run node server.js in both the /internal and /external folders
 e. navigate to http://localhost:8080
 
 2. The sample app

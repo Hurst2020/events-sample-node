@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -38,8 +39,8 @@ spec:
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 60
----
 
+---
 apiVersion: v1
 kind: Service
 metadata: 
@@ -54,7 +55,6 @@ spec:
   type: LoadBalancer
 
 ---
-
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:

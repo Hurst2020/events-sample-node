@@ -1,9 +1,8 @@
 'use strict';
 
 console.log(`process.env.SERVER ${process.env.SERVER}`);
-const SERVER = (process.env.SERVER ? process.env.SERVER : "http://10.10.1.10:8080")
+const SERVER = (process.env.SERVER ? process.env.SERVER : "http://localhost:8082")
 console.log(`SERVER equals ${SERVER}`);
-
 
 
 // express is a nodejs web server
