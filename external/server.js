@@ -1,5 +1,7 @@
 'use strict';
 
+const SERVER = (process.env.SERVER ? process.env.SERVER : "http://10.10.1.10:8080")
+
 // express is a nodejs web server
 // https://www.npmjs.com/package/express
 const express = require('express');
@@ -43,7 +45,7 @@ app.get('/', (req, res) => {
     //  "start": "SERVER=http://localhost:8082 node server.js",
     request.get(  // first argument: url + return format
         {
-            url: process.env.SERVER + '/events',  // the microservice end point for events
+            url: SERVER + '/events',  // the microservice end point for events
             json: true  // response from server will be json format
         }, // second argument: function with three args,
         // runs when server response received
@@ -78,7 +80,7 @@ app.post('/event',
         //  "start": "SERVER=http://localhost:8082 node server.js",
         request.post(  // first argument: url + data + formats
             {
-                url: process.env.SERVER + '/event',  // the microservice end point for adding an event
+                url: SERVER + '/event',  // the microservice end point for adding an event
                 body: req.body,  // content of the form
                 headers: { // uploading json
                     "Content-Type": "application/json"
@@ -117,8 +119,8 @@ app.use((err, req, res, next) => {
 });
 
 // specify the port and start listening
-const PORT = (process.env.PORT ? process.env.PORT : 8080)
-console.log(`PORT equals ${PORT}`)
+const PORT = (process.env.PORT ? process.env.PORT : 8080);
+console.log(`PORT equals ${PORT}`);
 
 const server = app.listen(PORT, () => {
     const host = server.address().address;
