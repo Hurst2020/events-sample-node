@@ -1,8 +1,8 @@
 'use strict';
 
-console.log(`process.env.SERVER ${process.env.SERVER}`);
+console.log(`process.env.SERVER = ${process.env.SERVER}`);
 const SERVER = (process.env.SERVER ? process.env.SERVER : "http://localhost:8082")
-console.log(`SERVER equals ${SERVER}`);
+console.log(`Backend SERVER equals ${SERVER}`);
 
 
 // express is a nodejs web server
@@ -129,7 +129,7 @@ const server = app.listen(PORT, () => {
     const host = server.address().address;
     const port = server.address().port;
 
-    console.log(`Events app listening at http://${host}:${port}`);
+    console.log(`Events Web app listening at http://${host}:${port}`);
 });
 
 module.exports = app;
