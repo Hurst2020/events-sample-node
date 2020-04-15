@@ -109,8 +109,7 @@ app.post('/event',
                 res.render('home',
                     {
                         layout: 'default',  //the outer html page
-                        template: 'index-template', // the partial view inserted into 
-                        // {{body}} in the layout - the code
+                        // {{{body}}} in the layout - the code
                         // in here inserts values from the JSON
                         // received from the server
                         events: body.events
